@@ -1,9 +1,10 @@
 //import 'package:coba1/button.dart';
 import 'package:coba1/dialog.dart';
+//import 'package:coba1/image_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'dialog.dart';
+//import 'dialog.dart';
 
 class ScaffoldWidget extends StatelessWidget {
   const ScaffoldWidget({super.key});
@@ -25,14 +26,14 @@ class ScaffoldWidget extends StatelessWidget {
             icon: Icon(Icons.more_vert),
           ),
         ],
-        backgroundColor: Color.fromARGB(255, 237, 118, 118),
-        foregroundColor: Color.fromRGBO(55, 53, 53, 1),
+        backgroundColor: Color.fromARGB(255, 17, 204, 251),
+        foregroundColor: Color.fromRGBO(36, 36, 36, 1),
       ),
       body: Column(
-        children: [
+        children: const <Widget>[
           Center(
             child: Text(
-              'sabar ya kak',
+              'yah ketemu deh',
               style: TextStyle(
                 fontSize: 50,
                 color: Color.fromARGB(255, 0, 0, 0),
@@ -43,8 +44,8 @@ class ScaffoldWidget extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Color.fromARGB(255, 153, 51, 51),
-        unselectedItemColor: Color.fromARGB(255, 248, 49, 49),
+        selectedItemColor: Color.fromARGB(255, 135, 135, 135),
+        unselectedItemColor: Color.fromARGB(255, 30, 28, 28),
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -61,15 +62,14 @@ class ScaffoldWidget extends StatelessWidget {
             label: " contoh",
           )
         ],
-        //  backgroundColor: Color.fromARGB(11, 0, 0, 0),
+        // backgroundColor: Color.fromARGB(243, 179, 52, 52),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         tooltip: 'tambah satu',
-        child: Icon(Icons.notification_add),
+        child: Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
-    

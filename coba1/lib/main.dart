@@ -1,7 +1,7 @@
 import 'package:coba1/Scaffold_widget.dart';
-import 'package:coba1/Scaffold_widget.dart';
-import 'package:coba1/button.dart';
-import 'package:coba1/dialog.dart';
+// import 'package:coba1/Scaffold_widget.dart';
+// import 'package:coba1/button.dart';
+// import 'package:coba1/dialog.dart';
 import 'package:flutter/Material.dart';
 
 void main() => runApp(MyApp());
