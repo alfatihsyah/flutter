@@ -8,6 +8,7 @@ class ImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image(
       image: AssetImage('assets/fateh.jpg'),
+      height: 200,width: 300,
     );
   }
 }
