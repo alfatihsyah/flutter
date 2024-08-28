@@ -3,6 +3,7 @@ import 'package:coba1/date.dart';
 import 'package:coba1/dialog.dart';
 import 'package:coba1/image_widget.dart';
 import 'package:coba1/input_selection.dart';
+import 'package:coba1/row.dart';
 //import 'package:coba1/image_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -32,23 +33,24 @@ class ScaffoldWidget extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 17, 204, 251),
           foregroundColor: Color.fromRGBO(36, 36, 36, 1),
         ),
-        body: Column(
-          children: const <Widget>[
-            Center(
-              child: Text(
-                'yah ketemu deh',
-                style: TextStyle(
-                  fontSize: 50,
-                  color: Color.fromARGB(255, 0, 0, 0),
-                ),
-              ),
-            ),
-            InputSelection(),
-            DialogWidget(),
-           // ImageWidget(),
-            DateWidget(title: "tanggal widget",)
-          ],
-        ),
+        body: RowWidget(),
+        // Column(
+        //   children: const <Widget>[
+        //     Center(
+        //       child: Text(
+        //         'yah ketemu deh',
+        //         style: TextStyle(
+        //           fontSize: 50,
+        //           color: Color.fromARGB(255, 0, 0, 0),
+        //         ),
+        //       ),
+        //     ),
+        //     //   InputSelection(),
+        //     DialogWidget(),
+        //     ImageWidget(),
+        //     DateWidget(title: "tanggal widget",)
+        //   ],
+        // ),
         bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Color.fromARGB(255, 135, 135, 135),
           unselectedItemColor: Color.fromARGB(255, 30, 28, 28),
