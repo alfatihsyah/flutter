@@ -32,7 +32,8 @@ class ScaffoldWidget extends StatelessWidget {
           ],
           backgroundColor: Color.fromARGB(255, 17, 204, 251),
           foregroundColor: Color.fromRGBO(36, 36, 36, 1),
-        ),
+        ),  
+        
         body: RowWidget(),
         // Column(
         //   children: const <Widget>[
