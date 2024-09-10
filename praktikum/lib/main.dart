@@ -1,11 +1,6 @@
-import 'package:coba1/Scaffold_widget.dart';
-//import 'package:coba1/stack_position.dart';
-import 'package:coba1/tugaspakbidin.dart';
-//import 'package:coba1/row.dart';
-// import 'package:coba1/Scaffold_widget.dart';
-// import 'package:coba1/button.dart';
-// import 'package:coba1/dialog.dart';
+
 import 'package:flutter/Material.dart';
+import 'package:praktikum/coba';
 
 void main() => runApp(MyApp());
 
@@ -20,6 +15,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: tugas1());
+        home: StackPosition());
   }
 }
