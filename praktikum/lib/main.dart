@@ -1,6 +1,7 @@
 
 import 'package:flutter/Material.dart';
-import 'package:praktikum/coba';
+//import 'package:praktikum/coba';
+import 'package:praktikum/pertamina.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,6 +16,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: StackPosition());
+        home: copas());
   }
 }

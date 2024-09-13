@@ -1,116 +1,275 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/Material.dart';
+import 'package:flutter/cupertino.dart';
 
-class MyTugas extends StatelessWidget {
-  const MyTugas({super.key});
+class tugas1 extends StatelessWidget {
+  const tugas1({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('MyApp'),
-        backgroundColor: Colors.red,
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          //title: Text('MyPertamina'),
+          leading: (Image(image: AssetImage('assets/pertamina.png'))),
+          backgroundColor: const Color.fromARGB(255, 167, 202, 231),
+        ),
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              awal(),
+              SizedBox(height: 20),
+              fiturUtama(),
+              SizedBox(height: 20),
+              _buildNearbyStationCard(),
+              SizedBox(
+                height: 20,
+              ),
+              MacamBbm(),
+            ],
+          ),
+        ),
       ),
-      body: SingleChildScrollView(
+    );
+  }
+
+  Widget awal() {
+    return Text(
+      'Selamat datang',
+      style: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+    );
+  }
+
+  Widget fiturUtama() {
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [FuIsi(), Divider(), FuBayar(), Divider(), FuQr()],
+        ),
+      ),
+    );
+  }
+
+  Widget FuIsi() {
+    return ListTile(
+      contentPadding: EdgeInsets.zero,
+      leading: Icon(Icons.add, color: Color.fromARGB(255, 208, 52, 35)),
+      title: Text(
+        'BBM yang talah diisi',
+        style: TextStyle(fontSize: 16),
+      ),
+      trailing: Text(
+        '0 Liter BBM 30 hari terakhir',
+        style: TextStyle(fontSize: 16, color: Colors.blue),
+      ),
+    );
+  }
+  // Widget _buildInfoRow(String title, String subtitle) {
+  //   return Row(
+  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //     children: [
+  //       Text(
+  //         title,
+  //         style: TextStyle(fontSize: 16),
+  //       ),
+  //       Text(
+  //         subtitle,
+  //         style: TextStyle(fontSize: 16, color: Colors.blue),
+  //       ),
+  //     ],
+  //   );
+  // }
+
+  Widget FuBayar() {
+    return ListTile(
+      contentPadding: EdgeInsets.zero,
+      leading: Icon(Icons.credit_card, color: Colors.blue),
+      title: Text(
+        'Metode Pembayaran',
+        style: TextStyle(fontSize: 16),
+      ),
+      trailing: Text(
+        'Hubungkan',
+        style: TextStyle(fontSize: 16, color: Colors.blue),
+      ),
+    );
+  }
+
+  // Widget _buildPoints() {
+  //   return ListTile(
+  //     contentPadding: EdgeInsets.zero,
+  //     leading: Icon(Icons.star, color: Colors.orange),
+  //     title: Text(
+  //       'Poin Anda',
+  //       style: TextStyle(fontSize: 16),
+  //     ),
+  //     trailing: Text(
+  //       '0',
+  //       style: TextStyle(fontSize: 16),
+  //     ),
+  //   );
+  // }
+
+  Widget FuQr() {
+    return ListTile(
+      contentPadding: EdgeInsets.zero,
+      leading: Icon(
+        Icons.qr_code,
+        color: Colors.black,
+      ),
+      title: Text(
+        'Tampilkan barqode',
+        style: TextStyle(fontSize: 16),
+      ),
+    );
+  }
+
+  Widget _buildNearbyStationCard() {
+    return Card(
+      elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Header Row with "BERITA TERBARU" and "PERTANDINGAN HARI INI"
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Text(
-                    'BERITA TERBARU',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Text(
-                    'PERTANDINGAN HARI INI',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 4),
-            // Main News Container
-            Container(
-              color: Colors.purpleAccent,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image.asset(
-                    'zk.jpeg',
-                    width: double.infinity,
-                    height: 230,
-                    fit: BoxFit.cover,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Text(
-                      'Costa Mendekat Ke Palmeiras',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: Text(
-                      'Transfer',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
+            Text(
+              'SPBU terdekat dari lokasi Anda',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 10),
-            // News List Section
-            Column(
+            SizedBox(height: 10),
+            Row(
               children: [
-                ListTile(
-                  leading: Image.asset(
-                    'zk.jpeg',
-                    width: 100,
-                    height: 80,
-                    fit: BoxFit.cover,
+                Text(
+                  '00.000.00',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
                   ),
-                  title: const Text(
-                    'Pique Bilang Wasit Untungkan Madrid, Koeman Tepok Jidat',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  subtitle: const Text('Barcelona Feb 13, 2021'),
                 ),
-                const Divider(),
-                ListTile(
-                  leading: Image.asset(
-                    'zk.jpeg',
-                    width: 100,
-                    height: 80,
-                    fit: BoxFit.cover,
-                  ),
-                  title: const Text(
-                    'Pique Bilang Wasit Untungkan Madrid, Koeman Tepok Jidat',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  subtitle: const Text('Barcelona Feb 13, 2021'),
-                ),
+                SizedBox(width: 10),
+                Icon(Icons.navigation, color: Colors.blue),
               ],
+            ),
+            SizedBox(height: 5),
+            Text(
+              'SPBU 00.000.00, Jl.Ahmat Yani',
+              style: TextStyle(fontSize: 16),
             ),
           ],
         ),
       ),
     );
   }
+
+  Widget MacamBbm() {
+    return Container(
+      child: Column(
+        children: [
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.all(2),
+                  padding: const EdgeInsets.all(35),
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                    child: Text('pertamax'),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.all(2),
+                  padding: const EdgeInsets.all(35),
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                    child: Text('pertamax'),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.all(2),
+                  padding: const EdgeInsets.all(35),
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                    child: Text('pertamax'),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.all(2),
+                  padding: const EdgeInsets.all(35),
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 203, 202, 202),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                    child: Text('pertamax'),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.all(2),
+                  padding: const EdgeInsets.all(35),
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 203, 202, 202),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                    child: Text('pertamax'),
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  // Widget FiturTambahan() {
+  //   return Container(
+  //     decoration: BoxDecoration(
+  //       color: Colors.grey,
+  //       borderRadius: BorderRadius.circular(15),
+  //     ),
+  //     padding: const EdgeInsets.all(15),
+  //     child: Column(
+  //       crossAxisAlignment: CrossAxisAlignment.start,
+  //       children: [
+  //         GridView.builder(
+  //           shrinkWrap: true,
+  //           physics: NeverScrollableScrollPhysics(),
+  //           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+  //               crossAxisCount: 4,
+  //               crossAxisSpacing: 10,
+  //               mainAxisSpacing: 10,
+  //               childAspectRatio: 1),
+  //           itemCount: 4,
+  //           itemBuilder: (context, index) {
+  //             if (index == 3) {
+  //               return tampilan(null, "");
+  //             }
+  //             else
+  //           },
+  //         )
+  //       ],
+  //     ),
+  //   );
+  // }
 }
