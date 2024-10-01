@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigasi/views/homeview.dart';
 import 'package:navigasi/views/loginview.dart';
 import 'package:navigasi/views/profileview.dart';
 import 'package:navigasi/views/transaksi.dart';
@@ -14,11 +15,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/login',
+      initialRoute: '/',
       routes: {
-        '/login': (_) => Loginview(),
-        //'/profil' : (_) => Profileview(),
-        '/transaksi' : (_) => TransaksiView(),
+        '/login': (context) => Loginview(),
+        '/': (context) => HomeView(),
+        // '/ profil' : (context) => Profileview(nama: nama, juara: juara),
+        '/transaksi' : (context) => TransaksiView(),
       },
     );
   }

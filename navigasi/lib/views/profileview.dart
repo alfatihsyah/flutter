@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigasi/widgets/menu.dart';
 
 class Profileview extends StatelessWidget {
   String nama;
@@ -17,6 +18,7 @@ class Profileview extends StatelessWidget {
           Text('${juara}')
         ],
       ),
+      bottomNavigationBar: menuBottomState(2                  ),
     );
   }
 }

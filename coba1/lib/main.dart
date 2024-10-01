@@ -1,4 +1,6 @@
 
+import 'package:coba1/calculator/kalkulator.dart';
+import 'package:coba1/stack_position.dart';
 import 'package:coba1/tugas_widget.dart';
 //import 'package:coba1/stack_position.dart';
 //import 'package:coba1/row.dart';
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-      home: tugas1()
+      home: GeometryCalculatorApp()
          //home: RowWidget(),
         );
   }

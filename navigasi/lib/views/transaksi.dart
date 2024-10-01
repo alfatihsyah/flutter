@@ -5,10 +5,18 @@ class TransaksiView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)!.settings.arguments;
+    final args = ModalRoute.of(context)!.settings.arguments as Map;
     return Column(
       children: [
-        Text('id : ' )
+        Text("ID : ${args['id']}"),
+        Text("Nama Produk : ${args['product']}"),
+        Text("Harga : ${args['price']}"),
+        IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back),
+        )
       ],
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigasi/views/profileview.dart';
+import 'package:navigasi/widgets/menu.dart';
 
 class Loginview extends StatelessWidget {
   const Loginview({super.key});
@@ -9,19 +10,19 @@ class Loginview extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Text("halaman login"),
+          Text("omahe cacak e"),
           ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, '/home');
             },
             child: Text('home'),
           ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushReplacementNamed(context, '/login');
-            },
-            child: Text('login'),
-          ),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     Navigator.pushReplacementNamed(context, '/login');
+          //   },
+          //   child: Text('login'),
+          // ),
           ElevatedButton(
               onPressed: () {
                 Navigator.pushReplacement(
@@ -37,13 +38,14 @@ class Loginview extends StatelessWidget {
               ElevatedButton(onPressed: (){
                 Navigator.pushNamed(context, '/transaksi',arguments: {
                   'id' : 1,
-                  'product' : "-",
+                  'product' : "bca",
                   'price' : 0,
                 }
                 );
-              }, child: Text('asekkk'))
+              }, child: Text('menu')),
         ],
       ),
+      bottomNavigationBar: menuBottomState(0),
     );
   }
 }

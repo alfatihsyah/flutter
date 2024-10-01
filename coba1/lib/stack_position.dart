@@ -1,5 +1,6 @@
 //import 'dart:js_interop';
 
+import 'package:coba1/function.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -102,6 +103,7 @@ class StackPosition extends StatelessWidget {
                         crossAxisSpacing: 0,
                         padding: EdgeInsets.all(8),
                         children: [
+                        WidgetFunction('assets/pulsa.png', 'pulsa,'),
                           Container(
                             child: Column(
                               children: [
