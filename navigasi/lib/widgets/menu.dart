@@ -24,6 +24,9 @@ class _menuBottomStateState extends State<menuBottomState> {
         ),
       );
     }
+    else if (index == 2) {
+      Navigator.pushReplacementNamed(context, '/movie');
+  }
   }
 
   @override
@@ -38,6 +41,7 @@ class _menuBottomStateState extends State<menuBottomState> {
         BottomNavigationBarItem(
             icon: Icon(Icons.offline_bolt_outlined), label: "bahan bakar"),
         BottomNavigationBarItem(icon: Icon(Icons.settings), label: "mekanik"),
+        BottomNavigationBarItem(icon: Icon(Icons.movie), label: "movie"),
       ],
     );
   }

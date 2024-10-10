@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:navigasi/views/homeview.dart';
 import 'package:navigasi/views/loginview.dart';
+import 'package:navigasi/views/movie_view.dart';
 import 'package:navigasi/views/profileview.dart';
 import 'package:navigasi/views/transaksi.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => HomeView(),
         // '/ profil' : (context) => Profileview(nama: nama, juara: juara),
         '/transaksi' : (context) => TransaksiView(),
+        '/movie' : (context) => MovieView(),
       },
     );
   }

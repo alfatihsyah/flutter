@@ -9,7 +9,7 @@ class GeometryCalculatorApp extends StatelessWidget {
       title: 'kalkulator',
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
-      themeMode: ThemeMode.system, // Mengikuti pengaturan sistem
+      themeMode: ThemeMode.system, 
       home: GeometryCalculatorPage(),
     );
   }
@@ -50,14 +50,14 @@ class GeometryCalculatorPage extends StatelessWidget {
             // Tombol untuk menghitung
             ElevatedButton(
               onPressed: () {
-                double length = double.tryParse(lengthController.text) ?? 0;
-                double width = double.tryParse(widthController.text) ?? 0;
-                double height = double.tryParse(heightController.text) ?? 0;
+                double panjang = double.tryParse(lengthController.text) ?? 0;
+                double lebar = double.tryParse(widthController.text) ?? 0;
+                double tinggi = double.tryParse(heightController.text) ?? 0;
 
-                if (length > 0 && width > 0 && height > 0) {
-                  double volume = length * width * height;
-                  double surfaceArea = 2 *
-                      ((length * width) + (length * height) + (width * height));
+                if (panjang > 0 && lebar > 0 && tinggi > 0) {
+                  double volume = panjang * lebar * tinggi;
+                  double luasPermukaan = 2 *
+                      ((panjang * lebar) + (panjang * tinggi) + (lebar * tinggi));
 
                   showDialog(
                     context: context,
@@ -67,7 +67,7 @@ class GeometryCalculatorPage extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text('volume: $volume'),
-                          Text('luas permukaan: $surfaceArea'),
+                          Text('luas permukaan: $luasPermukaan'),
                         ],
                       ),
                       actions: [
